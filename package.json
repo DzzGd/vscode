@@ -9,20 +9,40 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:json"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "dz-ext.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "dz-ext.getCurrentFilePath",
+        "title": "获取路径"
+      },
+      {
+        "command": "dz-ext.showWelcomePage",
+        "title": "欢迎页"
       }
     ],
     "menus": {
       "editor/context": [
         {
           "when": "editorFocus",
-          "command": "vscode-plugin-study.helloWorld",
+          "command": "dz-ext.helloWorld",
+          "group": "navigation"
+        },
+        {
+          "when": "editorFocus",
+          "command": "dz-ext.getCurrentFilePath",
+          "group": "navigation"
+        },
+        {
+          "when": "editorFocus",
+          "command": "dz-ext.showWelcomePage",
           "group": "navigation"
         }
       ]
